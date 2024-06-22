@@ -1,14 +1,15 @@
-import { createClient } from "npm:@libsql/client@0.6.2/sqlite3";
+import * as libsql from "npm:@libsql/client@0.6.2/sqlite3";
 import { Hono } from "jsr:@hono/hono@4.4.7";
 import dir from "./dist/dir.ts";
 import { serveStatic } from "jsr:@nfnitloop/deno-embedder@1.4.1/helpers/hono";
 import { isAbsolute, join } from "jsr:@std/path@0.225.2";
 
-export type Handle = (req: Request) => Response | Promise<Response>;
-export type Handler = { fetch: Handle };
+export type FetchHandler = {
+  fetch: (req: Request) => Response | Promise<Response>;
+};
 export type SqliteOptions = { dbPath?: string };
 
-export function createHandler(options: SqliteOptions): Handler {
+function createApp(options: SqliteOptions) {
   if (!options.dbPath) {
     throw new Error("Missing dbPath");
   }
@@ -18,7 +19,7 @@ export function createHandler(options: SqliteOptions): Handler {
     dbPath = join(Deno.cwd(), dbPath);
   }
 
-  const client = createClient({
+  const client = libsql.createClient({
     url: `file://${dbPath}`,
   });
 
@@ -43,4 +44,8 @@ export function createHandler(options: SqliteOptions): Handler {
   app.use("*", serveStatic({ root: dir }));
 
   return app;
+}
+
+export function createFetchHandler(options: SqliteOptions): FetchHandler {
+  return createApp(options);
 }

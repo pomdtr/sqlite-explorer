@@ -1,6 +1,6 @@
 #!/usr/bin/env -S deno run -A
 import manifest from "./deno.json" with { type: "json" };
-import { createHandler } from "./server.ts";
+import { createFetchHandler } from "./server.ts";
 import { parseArgs } from "jsr:@std/cli@0.224.1/parse-args";
 import { basename } from "jsr:@std/path@0.225.2";
 
@@ -40,7 +40,7 @@ if (typeof args[0] !== "string") {
   Deno.exit(1);
 }
 
-const handler = createHandler({
+const handler = createFetchHandler({
   dbPath: args[0],
 });
 
