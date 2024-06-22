@@ -1,0 +1,21 @@
+{
+    "name": "@pomdtr/sqlite-explorer",
+    "version": "0.0.4",
+    "exports": {
+        ".": "./cli.ts",
+        "./server": "./server.ts",
+        "./client": "./client.ts"
+    },
+    "tasks": {
+        "build:frontend": "cd frontend && npm run build",
+        "build": "deno task build:frontend && deno run -A embedder.ts build"
+    },
+    "publish": {
+        "include": [
+            "embed/**/*",
+            "client.ts",
+            "cli.ts",
+            "server.ts"
+        ]
+    }
+}

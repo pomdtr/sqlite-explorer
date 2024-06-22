@@ -1,0 +1,334 @@
+{
+  "version": "3",
+  "packages": {
+    "specifiers": {
+      "jsr:@cliffy/command@1.0.0-rc.4": "jsr:@cliffy/command@1.0.0-rc.4",
+      "jsr:@cliffy/flags@1.0.0-rc.4": "jsr:@cliffy/flags@1.0.0-rc.4",
+      "jsr:@cliffy/table@1.0.0-rc.4": "jsr:@cliffy/table@1.0.0-rc.4",
+      "jsr:@hono/hono": "jsr:@hono/hono@4.4.7",
+      "jsr:@hono/hono@4.4.7": "jsr:@hono/hono@4.4.7",
+      "jsr:@hono/hono@^4.0.0": "jsr:@hono/hono@4.4.7",
+      "jsr:@nfnitloop/deno-embedder": "jsr:@nfnitloop/deno-embedder@1.3.1",
+      "jsr:@nfnitloop/deno-embedder@1.3.1": "jsr:@nfnitloop/deno-embedder@1.3.1",
+      "jsr:@nfnitloop/deno-embedder@1.4.1": "jsr:@nfnitloop/deno-embedder@1.4.1",
+      "jsr:@std/assert@^0.196.0": "jsr:@std/assert@0.196.0",
+      "jsr:@std/assert@^0.221.0": "jsr:@std/assert@0.221.0",
+      "jsr:@std/assert@^0.224.0": "jsr:@std/assert@0.224.0",
+      "jsr:@std/assert@^0.225.0": "jsr:@std/assert@0.225.1",
+      "jsr:@std/assert@^0.225.1": "jsr:@std/assert@0.225.1",
+      "jsr:@std/assert@^0.226.0": "jsr:@std/assert@0.226.0",
+      "jsr:@std/async@0.196.0": "jsr:@std/async@0.196.0",
+      "jsr:@std/cli": "jsr:@std/cli@0.224.1",
+      "jsr:@std/cli@0.224.1": "jsr:@std/cli@0.224.1",
+      "jsr:@std/cli@^0.224.0": "jsr:@std/cli@0.224.1",
+      "jsr:@std/console@0.221": "jsr:@std/console@0.221.0",
+      "jsr:@std/encoding@0.224.0": "jsr:@std/encoding@0.224.0",
+      "jsr:@std/encoding@^0.224.0": "jsr:@std/encoding@0.224.0",
+      "jsr:@std/fmt@0.221": "jsr:@std/fmt@0.221.0",
+      "jsr:@std/fmt@^0.224.0": "jsr:@std/fmt@0.224.0",
+      "jsr:@std/fs@0.229.0": "jsr:@std/fs@0.229.0",
+      "jsr:@std/http": "jsr:@std/http@0.224.0",
+      "jsr:@std/media-types@^0.224.0": "jsr:@std/media-types@0.224.0",
+      "jsr:@std/path": "jsr:@std/path@0.225.0",
+      "jsr:@std/path@0.225.0": "jsr:@std/path@0.225.0",
+      "jsr:@std/path@0.225.2": "jsr:@std/path@0.225.2",
+      "jsr:@std/path@^0.224.0": "jsr:@std/path@0.224.0",
+      "jsr:@std/path@^0.225.0": "jsr:@std/path@0.225.0",
+      "jsr:@std/streams@^0.224.0": "jsr:@std/streams@0.224.0",
+      "jsr:@std/text@0.221": "jsr:@std/text@0.221.0",
+      "npm:@libsql/client": "npm:@libsql/client@0.6.2",
+      "npm:@libsql/client@0.6.2": "npm:@libsql/client@0.6.2",
+      "npm:libsql": "npm:libsql@0.3.19"
+    },
+    "jsr": {
+      "@cliffy/command@1.0.0-rc.4": {
+        "integrity": "709884ffe0f53ce3edafa92b58223634397878fbf6dcabe0c74ea0108273b9f7",
+        "dependencies": [
+          "jsr:@cliffy/flags@1.0.0-rc.4",
+          "jsr:@cliffy/table@1.0.0-rc.4",
+          "jsr:@std/fmt@0.221",
+          "jsr:@std/text@0.221"
+        ]
+      },
+      "@cliffy/flags@1.0.0-rc.4": {
+        "integrity": "29f370ade4ddf6e150a4d25fc44661234c19870ffcf7fb07cd100f1843fcd6e1"
+      },
+      "@cliffy/table@1.0.0-rc.4": {
+        "integrity": "990e4e0b3910e6c9cf7a5b4318b8f5e121cf681494c94fd113febb9b4d4c0741",
+        "dependencies": [
+          "jsr:@std/console@0.221"
+        ]
+      },
+      "@hono/hono@4.4.7": {
+        "integrity": "069f612a089362e59786ea925d19fa834096fe92bf4f4b8dd572c508a3a708aa"
+      },
+      "@nfnitloop/deno-embedder@1.3.1": {
+        "integrity": "98595bd887b0935be7aa8339855ff827514f5b285d3f54f34457b4d3008e2499",
+        "dependencies": [
+          "jsr:@cliffy/command@1.0.0-rc.4",
+          "jsr:@std/async@0.196.0",
+          "jsr:@std/encoding@0.224.0",
+          "jsr:@std/fs@0.229.0",
+          "jsr:@std/path@0.225.0"
+        ]
+      },
+      "@nfnitloop/deno-embedder@1.4.1": {
+        "integrity": "05f1557820fad642103f5e0d79cb51385ce19d8246dc1be331fd6ee92e3185f9",
+        "dependencies": [
+          "jsr:@cliffy/command@1.0.0-rc.4",
+          "jsr:@hono/hono@^4.0.0",
+          "jsr:@std/async@0.196.0",
+          "jsr:@std/encoding@0.224.0",
+          "jsr:@std/fs@0.229.0",
+          "jsr:@std/path@0.225.0"
+        ]
+      },
+      "@std/assert@0.196.0": {
+        "integrity": "ede8c09c2bb176dc9356c04d2548412e492a58dcf73aad0965695a4d8336f66b"
+      },
+      "@std/assert@0.221.0": {
+        "integrity": "a5f1aa6e7909dbea271754fd4ab3f4e687aeff4873b4cef9a320af813adb489a"
+      },
+      "@std/assert@0.224.0": {
+        "integrity": "8643233ec7aec38a940a8264a6e3eed9bfa44e7a71cc6b3c8874213ff401967f"
+      },
+      "@std/assert@0.225.1": {
+        "integrity": "7342fa32a6d82c2c7c98ffea566baa9a892d04b22815b9fcf62cedeee5764f9c"
+      },
+      "@std/assert@0.226.0": {
+        "integrity": "0dfb5f7c7723c18cec118e080fec76ce15b4c31154b15ad2bd74822603ef75b3"
+      },
+      "@std/async@0.196.0": {
+        "integrity": "bd572776dfdf94bcbe00ceea1263e06f0c0060ff258f8a5cf644c5b43992755a",
+        "dependencies": [
+          "jsr:@std/assert@^0.196.0"
+        ]
+      },
+      "@std/cli@0.224.1": {
+        "integrity": "f631d47fc9802541399d00a1f77ac62ac709e7465b6bc52547caa358c486b36e",
+        "dependencies": [
+          "jsr:@std/assert@^0.225.1"
+        ]
+      },
+      "@std/console@0.221.0": {
+        "integrity": "8f2afc1f3f14f5d6039c0c767f057e4aa1897d2210e167c4667cb155cafb9d11"
+      },
+      "@std/encoding@0.224.0": {
+        "integrity": "efb6dca97d3e9c31392bd5c8cfd9f9fc9decf5a1f4d1f78af7900a493bcf89b5"
+      },
+      "@std/fmt@0.221.0": {
+        "integrity": "379fed69bdd9731110f26b9085aeb740606b20428ce6af31ef6bd45ef8efa62a"
+      },
+      "@std/fmt@0.224.0": {
+        "integrity": "e20e9a2312a8b5393272c26191c0a68eda8d2c4b08b046bad1673148f1d69851"
+      },
+      "@std/fs@0.229.0": {
+        "integrity": "c353340334dd25b879c4e6e72371b2664da2bd41b633b5837c7249c04d90903d",
+        "dependencies": [
+          "jsr:@std/assert@^0.225.0",
+          "jsr:@std/path@^0.225.0"
+        ]
+      },
+      "@std/http@0.224.0": {
+        "integrity": "fde48c9133d1d7bb94c134d8f0f01c1a737e6e3879f52580e9ca92217a011e82",
+        "dependencies": [
+          "jsr:@std/cli@^0.224.0",
+          "jsr:@std/encoding@^0.224.0",
+          "jsr:@std/fmt@^0.224.0",
+          "jsr:@std/media-types@^0.224.0",
+          "jsr:@std/path@^0.224.0",
+          "jsr:@std/streams@^0.224.0"
+        ]
+      },
+      "@std/media-types@0.224.0": {
+        "integrity": "5ac87989393f8cb1c81bee02aef6f5d4c8289b416deabc04f9ad25dff292d0b0"
+      },
+      "@std/path@0.224.0": {
+        "integrity": "55bca6361e5a6d158b9380e82d4981d82d338ec587de02951e2b7c3a24910ee6",
+        "dependencies": [
+          "jsr:@std/assert@^0.224.0"
+        ]
+      },
+      "@std/path@0.225.0": {
+        "integrity": "044ed8d9ca76fa997ff1d30d48fc7756b4389bf6ce1ff9710633a2d174343bb3",
+        "dependencies": [
+          "jsr:@std/assert@^0.225.0"
+        ]
+      },
+      "@std/path@0.225.2": {
+        "integrity": "0f2db41d36b50ef048dcb0399aac720a5348638dd3cb5bf80685bf2a745aa506",
+        "dependencies": [
+          "jsr:@std/assert@^0.226.0"
+        ]
+      },
+      "@std/streams@0.224.0": {
+        "integrity": "9c21feb45113abfc67dd536029624d1792d56dfbb029b8c1baf4ad5a2c35769e",
+        "dependencies": [
+          "jsr:@std/assert@^0.224.0"
+        ]
+      },
+      "@std/text@0.221.0": {
+        "integrity": "a2f89ceb0d8851cd33e6774064621a1da9fbc36578cf4f02c5b5bcd7e8c84b67",
+        "dependencies": [
+          "jsr:@std/assert@^0.221.0"
+        ]
+      }
+    },
+    "npm": {
+      "@libsql/client@0.6.2": {
+        "integrity": "sha512-xRNfRLv/dOCbV4qd+M0baQwGmvuZpMd2wG2UAPs8XmcdaPvu5ErkcaeITkxlm3hDEJVabQM1cFhMBxsugWW9fQ==",
+        "dependencies": {
+          "@libsql/core": "@libsql/core@0.6.2",
+          "@libsql/hrana-client": "@libsql/hrana-client@0.6.2",
+          "js-base64": "js-base64@3.7.7",
+          "libsql": "libsql@0.3.19"
+        }
+      },
+      "@libsql/core@0.6.2": {
+        "integrity": "sha512-c2P4M+4u/4b2L02A0KjggO3UW51rGkhxr/7fzJO0fEAqsqrWGxuNj2YtRkina/oxfYvAof6xjp8RucNoIV/Odw==",
+        "dependencies": {
+          "js-base64": "js-base64@3.7.7"
+        }
+      },
+      "@libsql/darwin-arm64@0.3.19": {
+        "integrity": "sha512-rmOqsLcDI65zzxlUOoEiPJLhqmbFsZF6p4UJQ2kMqB+Kc0Rt5/A1OAdOZ/Wo8fQfJWjR1IbkbpEINFioyKf+nQ==",
+        "dependencies": {}
+      },
+      "@libsql/darwin-x64@0.3.19": {
+        "integrity": "sha512-q9O55B646zU+644SMmOQL3FIfpmEvdWpRpzubwFc2trsa+zoBlSkHuzU9v/C+UNoPHQVRMP7KQctJ455I/h/xw==",
+        "dependencies": {}
+      },
+      "@libsql/hrana-client@0.6.2": {
+        "integrity": "sha512-MWxgD7mXLNf9FXXiM0bc90wCjZSpErWKr5mGza7ERy2FJNNMXd7JIOv+DepBA1FQTIfI8TFO4/QDYgaQC0goNw==",
+        "dependencies": {
+          "@libsql/isomorphic-fetch": "@libsql/isomorphic-fetch@0.2.1",
+          "@libsql/isomorphic-ws": "@libsql/isomorphic-ws@0.1.5",
+          "js-base64": "js-base64@3.7.7",
+          "node-fetch": "node-fetch@3.3.2"
+        }
+      },
+      "@libsql/isomorphic-fetch@0.2.1": {
+        "integrity": "sha512-Sv07QP1Aw8A5OOrmKgRUBKe2fFhF2hpGJhtHe3d1aRnTESZCGkn//0zDycMKTGamVWb3oLYRroOsCV8Ukes9GA==",
+        "dependencies": {}
+      },
+      "@libsql/isomorphic-ws@0.1.5": {
+        "integrity": "sha512-DtLWIH29onUYR00i0GlQ3UdcTRC6EP4u9w/h9LxpUZJWRMARk6dQwZ6Jkd+QdwVpuAOrdxt18v0K2uIYR3fwFg==",
+        "dependencies": {
+          "@types/ws": "@types/ws@8.5.10",
+          "ws": "ws@8.17.1"
+        }
+      },
+      "@libsql/linux-arm64-gnu@0.3.19": {
+        "integrity": "sha512-mgeAUU1oqqh57k7I3cQyU6Trpdsdt607eFyEmH5QO7dv303ti+LjUvh1pp21QWV6WX7wZyjeJV1/VzEImB+jRg==",
+        "dependencies": {}
+      },
+      "@libsql/linux-arm64-musl@0.3.19": {
+        "integrity": "sha512-VEZtxghyK6zwGzU9PHohvNxthruSxBEnRrX7BSL5jQ62tN4n2JNepJ6SdzXp70pdzTfwroOj/eMwiPt94gkVRg==",
+        "dependencies": {}
+      },
+      "@libsql/linux-x64-gnu@0.3.19": {
+        "integrity": "sha512-2t/J7LD5w2f63wGihEO+0GxfTyYIyLGEvTFEsMO16XI5o7IS9vcSHrxsvAJs4w2Pf907uDjmc7fUfMg6L82BrQ==",
+        "dependencies": {}
+      },
+      "@libsql/linux-x64-musl@0.3.19": {
+        "integrity": "sha512-BLsXyJaL8gZD8+3W2LU08lDEd9MIgGds0yPy5iNPp8tfhXx3pV/Fge2GErN0FC+nzt4DYQtjL+A9GUMglQefXQ==",
+        "dependencies": {}
+      },
+      "@libsql/win32-x64-msvc@0.3.19": {
+        "integrity": "sha512-ay1X9AobE4BpzG0XPw1gplyLZPGHIgJOovvW23gUrukRegiUP62uzhpRbKNogLlUOynyXeq//prHgPXiebUfWg==",
+        "dependencies": {}
+      },
+      "@neon-rs/load@0.0.4": {
+        "integrity": "sha512-kTPhdZyTQxB+2wpiRcFWrDcejc4JI6tkPuS7UZCG4l6Zvc5kU/gGQ/ozvHTh1XR5tS+UlfAfGuPajjzQjCiHCw==",
+        "dependencies": {}
+      },
+      "@types/node@18.16.19": {
+        "integrity": "sha512-IXl7o+R9iti9eBW4Wg2hx1xQDig183jj7YLn8F7udNceyfkbn1ZxmzZXuak20gR40D7pIkIY1kYGx5VIGbaHKA==",
+        "dependencies": {}
+      },
+      "@types/ws@8.5.10": {
+        "integrity": "sha512-vmQSUcfalpIq0R9q7uTo2lXs6eGIpt9wtnLdMv9LVpIjCA/+ufZRozlVoVelIYixx1ugCBKDhn89vnsEGOCx9A==",
+        "dependencies": {
+          "@types/node": "@types/node@18.16.19"
+        }
+      },
+      "data-uri-to-buffer@4.0.1": {
+        "integrity": "sha512-0R9ikRb668HB7QDxT1vkpuUBtqc53YyAwMwGeUFKRojY/NWKvdZ+9UYtRfGmhqNbRkTSVpMbmyhXipFFv2cb/A==",
+        "dependencies": {}
+      },
+      "detect-libc@2.0.2": {
+        "integrity": "sha512-UX6sGumvvqSaXgdKGUsgZWqcUyIXZ/vZTrlRT/iobiKhGL0zL4d3osHj3uqllWJK+i+sixDS/3COVEOFbupFyw==",
+        "dependencies": {}
+      },
+      "fetch-blob@3.2.0": {
+        "integrity": "sha512-7yAQpD2UMJzLi1Dqv7qFYnPbaPx7ZfFK6PiIxQ4PfkGPyNyl2Ugx+a/umUonmKqjhM4DnfbMvdX6otXq83soQQ==",
+        "dependencies": {
+          "node-domexception": "node-domexception@1.0.0",
+          "web-streams-polyfill": "web-streams-polyfill@3.3.3"
+        }
+      },
+      "formdata-polyfill@4.0.10": {
+        "integrity": "sha512-buewHzMvYL29jdeQTVILecSaZKnt/RJWjoZCF5OW60Z67/GmSLBkOFM7qh1PI3zFNtJbaZL5eQu1vLfazOwj4g==",
+        "dependencies": {
+          "fetch-blob": "fetch-blob@3.2.0"
+        }
+      },
+      "js-base64@3.7.7": {
+        "integrity": "sha512-7rCnleh0z2CkXhH67J8K1Ytz0b2Y+yxTPL+/KOJoa20hfnVQ/3/T6W/KflYI4bRHRagNeXeU2bkNGI3v1oS/lw==",
+        "dependencies": {}
+      },
+      "libsql@0.3.19": {
+        "integrity": "sha512-Aj5cQ5uk/6fHdmeW0TiXK42FqUlwx7ytmMLPSaUQPin5HKKKuUPD62MAbN4OEweGBBI7q1BekoEN4gPUEL6MZA==",
+        "dependencies": {
+          "@libsql/darwin-arm64": "@libsql/darwin-arm64@0.3.19",
+          "@libsql/darwin-x64": "@libsql/darwin-x64@0.3.19",
+          "@libsql/linux-arm64-gnu": "@libsql/linux-arm64-gnu@0.3.19",
+          "@libsql/linux-arm64-musl": "@libsql/linux-arm64-musl@0.3.19",
+          "@libsql/linux-x64-gnu": "@libsql/linux-x64-gnu@0.3.19",
+          "@libsql/linux-x64-musl": "@libsql/linux-x64-musl@0.3.19",
+          "@libsql/win32-x64-msvc": "@libsql/win32-x64-msvc@0.3.19",
+          "@neon-rs/load": "@neon-rs/load@0.0.4",
+          "detect-libc": "detect-libc@2.0.2"
+        }
+      },
+      "node-domexception@1.0.0": {
+        "integrity": "sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==",
+        "dependencies": {}
+      },
+      "node-fetch@3.3.2": {
+        "integrity": "sha512-dRB78srN/l6gqWulah9SrxeYnxeddIG30+GOqK/9OlLVyLg3HPnr6SqOWTWOXKRwC2eGYCkZ59NNuSgvSrpgOA==",
+        "dependencies": {
+          "data-uri-to-buffer": "data-uri-to-buffer@4.0.1",
+          "fetch-blob": "fetch-blob@3.2.0",
+          "formdata-polyfill": "formdata-polyfill@4.0.10"
+        }
+      },
+      "web-streams-polyfill@3.3.3": {
+        "integrity": "sha512-d2JWLCivmZYTSIoge9MsgFCZrt571BikcWGYkjC1khllbTeDlGqZ2D8vD8E/lJa8WGWbb7Plm8/XJYV7IJHZZw==",
+        "dependencies": {}
+      },
+      "ws@8.17.1": {
+        "integrity": "sha512-6XQFvXTkbfUOZOKKILFG1PDK2NDQs4azKQl26T0YS5CxqWLgXajbPZ+h4gZekJyRqFU8pvnbAbbs/3TgRPy+GQ==",
+        "dependencies": {}
+      }
+    }
+  },
+  "redirects": {
+    "https://esm.town/v/pomdtr/basicAuth": "https://esm.town/v/pomdtr/basicAuth?v=65"
+  },
+  "remote": {
+    "https://esm.town/v/pomdtr/basicAuth?v=65": "d42002f6cad9bf244b33718d388c8c1ed50d4ca923a41a4b7a2e22594de5f202",
+    "https://raw.githubusercontent.com/pomdtr/deno-embedder/hono/middleware/_src/jsr_fix.ts": "446a20e27ae7cf5f9ecf738995004a04601121459e24d2a0de7e90af7eb38785",
+    "https://raw.githubusercontent.com/pomdtr/deno-embedder/hono/middleware/_src/util.ts": "55f4a911f0a2b175a3d7c6dc22c18ed79795cfeb02ea8becbde5992db2f22487",
+    "https://raw.githubusercontent.com/pomdtr/deno-embedder/hono/middleware/deps/cliffy/command.ts": "d319813d339a92271d15609eeba34955862be584c94ea80fb61a8125131c4331",
+    "https://raw.githubusercontent.com/pomdtr/deno-embedder/hono/middleware/deps/hono.ts": "663f7cdd7570268b6dc086174a36dc28dfb37fddb94f81b6eb11da9e2942bdcd",
+    "https://raw.githubusercontent.com/pomdtr/deno-embedder/hono/middleware/deps/std/async.ts": "dffdf1ffd1d8526367b7dd1083810f28f1aba77a21e689af0057aae78ba1cf26",
+    "https://raw.githubusercontent.com/pomdtr/deno-embedder/hono/middleware/deps/std/encoding/base64.ts": "1889008aee309016f3dc051c44f208089ddcbee030926891ec7f0201140fe112",
+    "https://raw.githubusercontent.com/pomdtr/deno-embedder/hono/middleware/deps/std/fs.ts": "0a1bbd49a840ee9ffaa9c49a10a8481f02d1883e91f5e4865bd04f436a89b794",
+    "https://raw.githubusercontent.com/pomdtr/deno-embedder/hono/middleware/deps/std/path.ts": "dd58c16fc785dbd1edb4bace0486310f28eeb963b555b8f87191ef6d5f04a931",
+    "https://raw.githubusercontent.com/pomdtr/deno-embedder/hono/middleware/embed.ts": "4db2e82da66d1e358e20ae805c220f066bfe4cc1aff7f26bc4b0f41c5d03d8a9",
+    "https://raw.githubusercontent.com/pomdtr/deno-embedder/hono/middleware/helpers/hono.ts": "87f7f93c890ef5621bc53e6c41e5006eca00585ec8b6225f49dc6352ca23fe07",
+    "https://raw.githubusercontent.com/pomdtr/deno-embedder/hono/middleware/mod.ts": "934652c7ae0d7ce65980409986e8d17b5ecdc258b4d6c7a0907535644cc3b328",
+    "https://raw.githubusercontent.com/pomdtr/deno-embedder/hono/middleware/plugins/plugins.ts": "71f5f3350019755f9f96927f5229273f49ee87ae263d54c901c2173c69fd52f2"
+  }
+}
