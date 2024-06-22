@@ -1,6 +1,6 @@
 import { createClient } from "npm:@libsql/client@0.6.2/sqlite3";
 import { Hono } from "jsr:@hono/hono@4.4.7";
-import dir from "./embed/dist/dir.ts";
+import dir from "./dist/dir.ts";
 import { serveStatic } from "jsr:@nfnitloop/deno-embedder@1.4.1/helpers/hono";
 import { isAbsolute, join } from "jsr:@std/path@0.225.2";
 

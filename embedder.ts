@@ -5,7 +5,7 @@ const options = {
   mappings: [
     {
       sourceDir: "frontend/dist",
-      destDir: "embed/dist",
+      destDir: "dist",
     },
   ],
 };
