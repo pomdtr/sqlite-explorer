@@ -4,9 +4,9 @@ import dir from "./embed/dist/dir.ts";
 import { serveStatic } from "jsr:@nfnitloop/deno-embedder@1.4.1/helpers/hono";
 import { isAbsolute, join } from "jsr:@std/path@0.225.2";
 
-type Handle = (req: Request) => Response | Promise<Response>;
-type Handler = { fetch: Handle };
-type SqliteOptions = { dbPath?: string };
+export type Handle = (req: Request) => Response | Promise<Response>;
+export type Handler = { fetch: Handle };
+export type SqliteOptions = { dbPath?: string };
 
 export function createHandler(options: SqliteOptions): Handler {
   if (!options.dbPath) {
