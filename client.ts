@@ -1,9 +1,16 @@
 /* Open in Val Town: https://www.val.town/v/std/sqlite */
 import { version } from "./deno.json" with { type: "json" };
 
-export type SqliteOptions = {
-  url: string;
+export type ClientParams = {
+  /**
+   * The URL of the SQLite server.
+   */
+  url: string | URL;
 };
+
+export function createClient(params: ClientParams): Client {
+  return new Client(params);
+}
 
 /**
  * Every Val Town account comes with its own private
@@ -11,8 +18,8 @@ export type SqliteOptions = {
  * is accessible from any of your vals.
  * ([Docs â†—](https://docs.val.town/std/sqlite))
  */
-export class Sqlite {
-  constructor(public options: SqliteOptions) {}
+export class Client {
+  constructor(public params: ClientParams) {}
   /**
    * Executes a SQLite statement.
    *
@@ -23,7 +30,7 @@ export class Sqlite {
    * `sqlite.execute({sql: "SELECT * from books WHERE year > ?;", args: [2020]})`
    */
   async execute(statement: InStatement): Promise<ResultSet> {
-    const url = new URL("/api/execute", this.options.url);
+    const url = new URL("/api/execute", this.params.url);
     const res = await fetch(url, {
       method: "POST",
       headers: {
@@ -48,7 +55,7 @@ export class Sqlite {
     statements: InStatement[],
     mode?: TransactionMode
   ): Promise<ResultSet[]> {
-    const url = new URL("/api/batch", this.options.url);
+    const url = new URL("/api/batch", this.params.url);
     const res = await fetch(url, {
       method: "POST",
       headers: {
