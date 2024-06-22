@@ -1,5 +1,5 @@
 /* Open in Val Town: https://www.val.town/v/std/sqlite */
-import { version } from "./deno.json" with { type: "json" };
+import manifest from "./deno.json" with { type: "json" };
 
 export type ClientParams = {
   /**
@@ -35,7 +35,7 @@ export class Client {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "X-Client-Version": version,
+        "X-Client-Version": manifest.version,
       },
       body: JSON.stringify({ statement }),
     });
@@ -60,7 +60,7 @@ export class Client {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "X-Client-Version": version,
+        "X-Client-Version": manifest.version,
       },
       body: JSON.stringify({ statements, mode }),
     });
