@@ -5,7 +5,9 @@ import { serveStatic } from "jsr:@nfnitloop/deno-embedder@1.4.1/helpers/hono";
 import { isAbsolute, join } from "jsr:@std/path@0.225.2";
 
 export type SqliteOptions = { dbPath?: string };
-export function serveDatabase(options: SqliteOptions): Deno.ServeHandler {
+
+type ServeHandler = (req: Request) => Response | Promise<Response>;
+export function serveDatabase(options: SqliteOptions): ServeHandler {
   if (!options.dbPath) {
     throw new Error("Missing dbPath");
   }
