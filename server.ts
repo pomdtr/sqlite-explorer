@@ -4,12 +4,8 @@ import dir from "./dist/dir.ts";
 import { serveStatic } from "jsr:@nfnitloop/deno-embedder@1.4.1/helpers/hono";
 import { isAbsolute, join } from "jsr:@std/path@0.225.2";
 
-export type FetchHandler = {
-  fetch: (req: Request) => Response | Promise<Response>;
-};
 export type SqliteOptions = { dbPath?: string };
-
-function createApp(options: SqliteOptions) {
+export function serveDatabase(options: SqliteOptions): Deno.ServeHandler {
   if (!options.dbPath) {
     throw new Error("Missing dbPath");
   }
@@ -43,9 +39,5 @@ function createApp(options: SqliteOptions) {
 
   app.use("*", serveStatic({ root: dir }));
 
-  return app;
-}
-
-export function createFetchHandler(options: SqliteOptions): FetchHandler {
-  return createApp(options);
+  return app.fetch;
 }

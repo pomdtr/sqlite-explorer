@@ -1,5 +1,7 @@
-import { createFetchHandler } from "./server.ts";
+import { serveDatabase } from "./server.ts";
 
-export default createFetchHandler({
-  dbPath: "chinook.db",
-});
+export default {
+  fetch: serveDatabase({
+    dbPath: "chinook.db",
+  }),
+};
