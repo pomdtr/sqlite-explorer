@@ -14,10 +14,18 @@ It includes:
 Create a `mod.ts` file:
 
 ```ts
-import { serveDatabase } from "jsr:@pomdtr/sqlite-explorer/server";
+import { serveDatabase } from "jsr:@pomdtr/sqlite-explorer@0.3.0/server";
+import { basicAuth } from "https://esm.town/v/pomdtr/basicAuth?v=66";
 
 export default {
-  fetch: serveDatabase({ dbPath: "./chinook.db" }),
+    fetch: basicAuth(
+        (req: Request) => serveDatabase(req, { dbPath: "./chinook.db" }),
+        {
+            verifyUser: (_user, password) => {
+                return password == Deno.env.get("PASSWORD");
+            },
+        },
+    ),
 };
 ```
 

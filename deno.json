@@ -1,6 +1,6 @@
 {
     "name": "@pomdtr/sqlite-explorer",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "exports": {
         ".": "./cli.ts",
         "./server": "./server.ts",

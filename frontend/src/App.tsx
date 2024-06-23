@@ -12,7 +12,7 @@ export default function App() {
   return (
     <Studio
       driver={new SqliteDriver()}
-      name="SQLite Explorer"
+      name="SQLite"
       theme={theme}
       onThemeChange={saveTheme}
       color="blue"
