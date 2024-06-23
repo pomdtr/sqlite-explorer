@@ -11,7 +11,7 @@ const command = new Command()
     default: 8080,
   })
   .action(({ port }, dbPath) => {
-    Deno.serve({ port }, serveDatabase({ dbPath }));
+    Deno.serve({ port }, (req) => serveDatabase(req, { dbPath }));
   });
 
 await command.parse(Deno.args);
