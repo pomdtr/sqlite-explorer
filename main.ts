@@ -6,5 +6,5 @@ const auth = lastlogin({
 });
 
 export default {
-  fetch: auth(serveDatabase({ dbPath: "./chinook.db" })),
+  fetch: auth((req) => serveDatabase(req, { dbPath: "./chinook.db" })),
 };

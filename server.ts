@@ -4,15 +4,28 @@ import dir from "./dist/dir.ts";
 import { serveStatic } from "jsr:@nfnitloop/deno-embedder@1.4.1/helpers/hono";
 import { isAbsolute, join } from "jsr:@std/path@0.225.2";
 
-export type SqliteOptions = { dbPath?: string };
+export type SqliteParams = {
+  /**
+   * The path to the SQLite database file.
+   */
+  dbPath: string;
+};
 
-type ServeHandler = (req: Request) => Response | Promise<Response>;
-export function serveDatabase(options: SqliteOptions): ServeHandler {
-  if (!options.dbPath) {
+/**
+ * Serves a SQLite database over HTTP.
+ * Also includes a powerful web interface for executing SQL queries.
+ *
+ * @param {SqliteParams} params - The parameters for the SQLite server.
+ */
+export function serveDatabase(
+  req: Request,
+  params: SqliteParams,
+): Response | Promise<Response> {
+  if (!params.dbPath) {
     throw new Error("Missing dbPath");
   }
 
-  let dbPath = options.dbPath;
+  let dbPath = params.dbPath;
   if (!isAbsolute(dbPath)) {
     dbPath = join(Deno.cwd(), dbPath);
   }
@@ -41,5 +54,5 @@ export function serveDatabase(options: SqliteOptions): ServeHandler {
 
   app.use("*", serveStatic({ root: dir }));
 
-  return app.fetch;
+  return app.fetch(req);
 }

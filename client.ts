@@ -6,6 +6,10 @@ export type ClientParams = {
    * The URL of the SQLite server.
    */
   url: string | URL;
+  /**
+   * Additional headers to send with the request.
+   */
+  headers?: Record<string, string>;
 };
 
 export function createClient(params: ClientParams): Client {
@@ -53,7 +57,7 @@ export class Client {
    */
   async batch(
     statements: InStatement[],
-    mode?: TransactionMode
+    mode?: TransactionMode,
   ): Promise<ResultSet[]> {
     const url = new URL("/api/batch", this.params.url);
     const res = await fetch(url, {
@@ -80,16 +84,16 @@ export type InValue = null | string | number | boolean;
 export type InArgs = Array<InValue> | Record<string, InValue>;
 export type InStatement =
   | {
-      /**
-       * The SQL statement to execute.
-       */
-      sql: string;
+    /**
+     * The SQL statement to execute.
+     */
+    sql: string;
 
-      /**
-       * The arguments to bind to the SQL statement.
-       */
-      args: InArgs;
-    }
+    /**
+     * The arguments to bind to the SQL statement.
+     */
+    args: InArgs;
+  }
   | string;
 export interface ResultSet {
   /** Names of columns.
