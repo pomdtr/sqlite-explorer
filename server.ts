@@ -11,6 +11,8 @@ export type SqliteParams = {
   dbPath: string;
 };
 
+type ServeHandler = (req: Request) => Response | Promise<Response>;
+
 /**
  * Serves a SQLite database over HTTP.
  * Also includes a powerful web interface for executing SQL queries.
@@ -18,41 +20,42 @@ export type SqliteParams = {
  * @param {SqliteParams} params - The parameters for the SQLite server.
  */
 export function serveDatabase(
-  req: Request,
   params: SqliteParams,
-): Response | Promise<Response> {
-  if (!params.dbPath) {
-    throw new Error("Missing dbPath");
-  }
-
-  let dbPath = params.dbPath;
-  if (!isAbsolute(dbPath)) {
-    dbPath = join(Deno.cwd(), dbPath);
-  }
-
-  const client = libsql.createClient({
-    url: `file://${dbPath}`,
-  });
-
-  const app = new Hono();
-
-  app.post("/api/execute", async (c) => {
-    const { statement } = await c.req.json();
-    const res = await client.execute(statement);
-    return c.json(res);
-  });
-
-  app.post("/api/batch", async (c) => {
-    const { statements, mode } = await c.req.json();
-    if (!statements) {
-      return new Response("No statements", { status: 400 });
+): ServeHandler {
+  return (req: Request) => {
+    if (!params.dbPath) {
+      throw new Error("Missing dbPath");
     }
 
-    const res = client.batch(statements, mode);
-    return new Response(JSON.stringify(res));
-  });
+    let dbPath = params.dbPath;
+    if (!isAbsolute(dbPath)) {
+      dbPath = join(Deno.cwd(), dbPath);
+    }
 
-  app.use("*", serveStatic({ root: dir }));
+    const client = libsql.createClient({
+      url: `file://${dbPath}`,
+    });
 
-  return app.fetch(req);
+    const app = new Hono();
+
+    app.post("/api/execute", async (c) => {
+      const { statement } = await c.req.json();
+      const res = await client.execute(statement);
+      return c.json(res);
+    });
+
+    app.post("/api/batch", async (c) => {
+      const { statements, mode } = await c.req.json();
+      if (!statements) {
+        return new Response("No statements", { status: 400 });
+      }
+
+      const res = client.batch(statements, mode);
+      return new Response(JSON.stringify(res));
+    });
+
+    app.use("*", serveStatic({ root: dir }));
+
+    return app.fetch(req);
+  };
 }

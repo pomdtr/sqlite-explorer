@@ -5,6 +5,8 @@ const auth = lastlogin({
   verifyEmail: (email) => email === "achille.lacoin@gmail.com",
 });
 
+const handler = serveDatabase({ dbPath: "./chinook.db" });
+
 export default {
-  fetch: auth((req) => serveDatabase(req, { dbPath: "./chinook.db" })),
+  fetch: auth(handler),
 };
