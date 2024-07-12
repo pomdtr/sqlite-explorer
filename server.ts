@@ -1,7 +1,6 @@
 import * as libsql from "npm:@libsql/client@0.6.2/sqlite3";
 import { Hono } from "jsr:@hono/hono@4.4.7";
-import dir from "./dist/dir.ts";
-import { serveStatic } from "jsr:@nfnitloop/deno-embedder@1.4.1/helpers/hono";
+import { serveDir } from "./dist/dir.ts";
 import { isAbsolute, join } from "jsr:@std/path@0.225.2";
 
 export type SqliteParams = {
@@ -54,7 +53,9 @@ export function serveDatabase(
       return new Response(JSON.stringify(res));
     });
 
-    app.use("*", serveStatic({ root: dir }));
+    app.get("*", (c) => {
+      return serveDir(c.req.raw);
+    });
 
     return app.fetch(req);
   };

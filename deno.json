@@ -8,7 +8,8 @@
     },
     "tasks": {
         "build:frontend": "cd frontend && npm run build",
-        "build": "deno task build:frontend && deno run -A embedder.ts build"
+        "embed": "deno run -A jsr:@smallweb/embed@0.0.6 frontend/dist dist",
+        "build": "deno task build:frontend && deno task embed"
     },
     "publish": {
         "include": [
